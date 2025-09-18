@@ -84,22 +84,22 @@ const BudgetSet = ({ className = "" }) => {
 
   return (
     <div className={`w-full max-w-sm mx-auto px-4 mb-6 ${className}`}>
-      <div className="bg-white border-2 border-blue-200 rounded-xl shadow-sm p-4">
+      <div className="bg-[#161543] border-2 border-[#8c3dee] rounded-xl shadow-sm p-4">
         
         {/* Header */}
         <div className="flex items-center justify-center mb-4">
-          <IndianRupee className="w-6 h-6 text-blue-600 mr-2" />
-          <h2 className="text-lg font-semibold text-gray-800">Set Budget</h2>
+          <IndianRupee className="w-6 h-6 text-[#ac68ff] mr-2" />
+          <h2 className="text-lg font-semibold ">Set Budget</h2>
         </div>
 
         {/* Budget Display/Edit */}
         {!isEditing && budget === 0 ? (
           // Initial state - no budget set
           <div className="text-center space-y-3">
-            <div className="text-gray-500 text-sm">Enter your shopping budget</div>
+            <div className="text-white/70 text-sm">Enter your shopping budget</div>
             <button
               onClick={() => setIsEditing(true)}
-              className="w-full bg-blue-500 hover:bg-blue-600 text-white py-3 px-4 
+              className="w-full bg-[#ac68ff] hover:bg-[#ac68ff]/70 text-white py-3 px-4 
                        rounded-lg font-medium transition-colors duration-200"
             >
               Set Budget
@@ -109,7 +109,7 @@ const BudgetSet = ({ className = "" }) => {
           // Budget set - display mode
           <div className="space-y-3">
             <div className="text-center">
-              <div className="text-2xl font-bold text-blue-600 mb-1">
+              <div className="text-2xl font-bold text-[#8c3dee] mb-1">
                 {formatCurrency(budget)}
               </div>
               <div className="text-sm text-gray-500">Your Budget</div>
@@ -119,7 +119,7 @@ const BudgetSet = ({ className = "" }) => {
               <button
                 onClick={handleEditBudget}
                 className="flex-1 flex items-center justify-center space-x-1
-                         bg-gray-100 hover:bg-gray-200 text-gray-700 py-2 px-3 
+                         bg-[#ac68ff] text-white py-2 px-3 
                          rounded-lg transition-colors duration-200"
               >
                 <Edit3 className="w-4 h-4" />
@@ -130,7 +130,7 @@ const BudgetSet = ({ className = "" }) => {
                 onClick={handleSpeakAgain}
                 disabled={isSpeaking || !speechSupported}
                 className="flex-1 flex items-center justify-center space-x-1
-                         bg-green-500 hover:bg-green-600 disabled:bg-gray-300 text-white py-2 px-3 
+                         bg-[#ac68ff] hover:bg-[#ac68ff]/70 disabled:bg-[#ac68ff]/50 text-white py-2 px-3 
                          rounded-lg transition-colors duration-200 disabled:cursor-not-allowed"
               >
                 <Volume2 className={`w-4 h-4 ${isSpeaking ? 'animate-pulse' : ''}`} />
@@ -141,7 +141,7 @@ const BudgetSet = ({ className = "" }) => {
         ) : (
           // Editing mode
           <div className="space-y-3">
-            <div className="text-center text-sm text-gray-600 mb-3">
+            <div className="text-center text-sm text-white/70 mb-3">
               Enter budget amount
             </div>
             
@@ -154,8 +154,8 @@ const BudgetSet = ({ className = "" }) => {
                 onChange={(e) => setInputValue(e.target.value)}
                 onKeyDown={handleKeyDown}
                 placeholder="0"
-                className="w-full pl-10 pr-4 py-3 text-lg border-2 border-gray-300 
-                         rounded-lg focus:border-blue-500 focus:outline-none
+                className="w-full pl-10 pr-4 py-3 text-lg border-2 border-[#8c3dee] 
+                         rounded-lg focus:border-[#8c3dee] focus:outline-none
                          text-center font-medium"
                 autoFocus
               />
@@ -165,7 +165,7 @@ const BudgetSet = ({ className = "" }) => {
               <button
                 onClick={handleCancel}
                 className="flex-1 flex items-center justify-center space-x-1
-                         bg-gray-100 hover:bg-gray-200 text-gray-700 py-2 px-3 
+                         bg-red-500 hover:bg-red-700 text-white py-2 px-3 
                          rounded-lg transition-colors duration-200"
               >
                 <X className="w-4 h-4" />
@@ -176,7 +176,7 @@ const BudgetSet = ({ className = "" }) => {
                 onClick={handleSetBudget}
                 disabled={!inputValue || parseFloat(inputValue) <= 0}
                 className="flex-1 flex items-center justify-center space-x-1
-                         bg-blue-500 hover:bg-blue-600 disabled:bg-gray-300 
+                         bg-[#8c3dee] hover:bg-[#8c3dee]/70 disabled:bg-gray-300 
                          text-white py-2 px-3 rounded-lg transition-colors duration-200
                          disabled:cursor-not-allowed"
               >
@@ -190,7 +190,7 @@ const BudgetSet = ({ className = "" }) => {
         {/* Quick Budget Options */}
         {isEditing && (
           <div className="mt-4 pt-4 border-t border-gray-200">
-            <div className="text-xs text-gray-500 mb-2 text-center">Quick set:</div>
+            <div className="text-xs text-white/70 mb-2 text-center">Quick set:</div>
             <div className="grid grid-cols-3 gap-2">
               {[1000, 2000, 5000].map(amount => (
                 <button
@@ -208,12 +208,12 @@ const BudgetSet = ({ className = "" }) => {
         )}
 
         {/* Speaking Status */}
-        {isSpeaking && (
-          <div className="mt-3 text-center text-green-600 text-sm flex items-center justify-center space-x-1">
+        {/* {isSpeaking && (
+          <div className="mt-3 text-center text-[#8c3dee] text-sm flex items-center justify-center space-x-1">
             <Volume2 className="w-4 h-4 animate-pulse" />
             <span>Speaking budget...</span>
           </div>
-        )}
+        )} */}
       </div>
     </div>
   );

@@ -157,7 +157,7 @@ const VoiceBtn = ({
                      ${isListening 
                        ? 'bg-red-500 text-white animate-pulse cursor-not-allowed' 
                        : isSupported 
-                         ? 'bg-blue-500 hover:bg-blue-600 text-white hover:shadow-xl'
+                         ? 'bg-[#8c3dee] text-white hover:shadow-xl'
                          : 'bg-gray-400 text-gray-600 cursor-not-allowed'
                      }
                      focus:outline-none`}
@@ -192,15 +192,15 @@ const VoiceBtn = ({
             onChange={handleTextChange}
             onKeyDown={handleKeyDown}
             placeholder={placeholder}
-            className="w-full pl-4 pr-16 py-4 text-base border-2 border-gray-300 rounded-xl 
-                     focus:border-blue-500 focus:outline-none bg-white shadow-sm
+            className="w-full pl-4 pr-16 py-4 text-base border-2 border-[#8c3dee] rounded-xl 
+                     focus:border-[#8c3dee]/70 focus:outline-none  shadow-sm
                      placeholder:text-gray-400"
           />
           <button
             onClick={handleTextSubmit}
             disabled={!inputText.trim()}
             className="absolute right-2 top-1/2 transform -translate-y-1/2
-                     bg-blue-500 hover:bg-blue-600 disabled:bg-gray-300
+                     bg-[#8c3dee] hover:bg-[#8c3dee]/70 disabled:opacity-30
                      text-white px-4 py-2 rounded-lg text-sm font-medium
                      disabled:cursor-not-allowed"
           >
@@ -210,14 +210,14 @@ const VoiceBtn = ({
 
         {/* Results Container */}
         {items.length > 0 && (
-          <div className="w-full bg-white border-2 border-gray-200 rounded-xl shadow-sm">
-            <div className="flex justify-between items-center px-4 py-3 border-b border-gray-200 bg-gray-50 rounded-t-xl">
-              <h3 className="text-lg font-semibold text-gray-800">
+          <div className="w-full bg-[#161543] border-2 border-[#8c3dee] rounded-xl shadow-sm">
+            <div className="flex justify-between items-center px-4 py-3 border-b border-gray-200  rounded-t-xl">
+              <h3 className="text-lg font-semibold text-white">
                 Items ({items.length})
               </h3>
               <button
                 onClick={clearAllItems}
-                className="flex items-center space-x-1 bg-green-500 hover:bg-green-600 
+                className="flex items-center space-x-1 bg-[#ac68ff] hover:bg-[#ac68ff]
                          text-white px-3 py-1 rounded-lg text-sm font-medium"
               >
                 <CheckCircle className="w-4 h-4" />
@@ -229,10 +229,10 @@ const VoiceBtn = ({
               {items.map(item => (
                 <div 
                   key={item.id} 
-                  className="flex items-center justify-between px-3 py-3 hover:bg-gray-50 
+                  className="flex items-center justify-between px-3 py-3 bg-transparent hover:bg-white/10 
                            rounded-lg border-b border-gray-100 last:border-b-0"
                 >
-                  <span className="text-gray-800 font-medium text-base flex-1 pr-2">
+                  <span className="text-white font-medium text-base flex-1 pr-2">
                     {item.text}
                   </span>
                   
@@ -251,7 +251,7 @@ const VoiceBtn = ({
 
         {/* Empty State */}
         {items.length === 0 && (
-          <div className="w-full bg-white border-2 border-dashed border-gray-300 
+          <div className="w-full bg-[#161543] border-2 border-dashed border-[#8c3dee] 
                          rounded-xl p-8 text-center">
             <div className="text-gray-400">
               <div className="text-4xl mb-2">📝</div>

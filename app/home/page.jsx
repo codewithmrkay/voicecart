@@ -1,11 +1,12 @@
 import CardSlider from '@/components/homepage/CardSlider'
 import SearchBar from '@/components/SearchLists/SearchBar'
+import ShoppingApp from '@/components/testss/shoppingapp'
 import WelcomPage from '@/components/welcomepage/welcomePart'
 import React from 'react'
 
 function HomePage() { 
   return (
-    <div className='relative w-full h-screen flex items-center justify-center flex-col'>
+    <div className='relative w-full min-h-screen flex items-center justify-center flex-col'>
       <div className='absolute top-5 left-0 w-full'>
         <WelcomPage/>
       </div>
@@ -13,7 +14,10 @@ function HomePage() {
         <SearchBar/>
         {/* <GrocerySearch/> */}
       </div>
-      <div className="px-2 sm:px-4 w-full overflow-hidden absolute top-40 md:static">
+      <div className='w-full flex items-center justify-center absolute top-30'>
+        <ShoppingApp/>
+      </div>
+      <div className="px-2 sm:px-4 w-full overflow-hidden absolute top-180">
         <CardSlider/>
       </div>
     </div>

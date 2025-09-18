@@ -21,7 +21,7 @@ export default function RootLayout({ children }) {
         <body
           className={` ${poppins.className} antialiased`}
         >
-          <div className="min-h-screen">
+          <div className="min-h-screen pb-50">
             {children}
           </div>
           <FooterWrapper />

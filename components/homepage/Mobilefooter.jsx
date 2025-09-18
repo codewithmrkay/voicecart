@@ -6,7 +6,7 @@ import { IoHomeOutline, IoGridOutline, IoCartOutline, IoPersonOutline } from 're
 const navItems = [
   { label: 'Home', icon: IoHomeOutline, href: '/home' },
   { label: 'Category', icon: IoGridOutline, href: '/category' },
-  { label: 'MyList', icon: IoCartOutline, href: '/basket' },
+  { label: 'MyList', icon: IoCartOutline, href: '/mylist' },
   { label: 'Me', icon: IoPersonOutline, href: '/me' },
 ]
 

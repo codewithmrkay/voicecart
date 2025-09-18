@@ -5,11 +5,10 @@ import VoiceBtn from "./voicebtn";
 
 export default function ShoppingApp() {
   return (
-    <div className="min-h-screen bg-white p-4">
-      <div className="max-w-md mx-auto py-8">
-        
-        <BudgetSet/>
-        <VoiceBtn 
+    <div className="p-4">
+      <div className="w-full mx-auto py-8 flex flex-col md:flex-row items-center justify-center">
+        <BudgetSet />
+        <VoiceBtn
           placeholder="Type item here ..."
         />
 
