@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+:root {
+  --background: #000125;
+  --primaryText: white;
+  --secondBg:#161543;
+  --selectBg:#8c3dee;
+  --selectColor:#ac68ff;
+}
+@theme inline {
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: var(--background);
+  color: var(--primaryText);
+  font-family: Arial, Helvetica, sans-serif;
+}
+.text-custom-size-on-mobile {
+
+}
+@media (min-width: 450px) and (max-width: 640px) {
+  .text-custom-size-on-mobile {
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+  p{
+    font-size:18px;
+  }
+}
+.secondbg{
+  background-color: var(--secondBg);
+}
+.selectbg{
+  background-color: var(--selectBg);
+}
+.selectcolor{
+  color: var(--selectColor);
+}
